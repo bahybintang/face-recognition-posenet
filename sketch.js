@@ -11,6 +11,7 @@ let windowY = 480;
 function setup() {
   createCanvas(windowX, windowY);
   capture = createCapture(VIDEO);
+  capture.size(windowX, windowY);
   capture.hide();
   poseNet = ml5.poseNet(capture, modelReady);
   poseNet.on('pose', drawFace);
